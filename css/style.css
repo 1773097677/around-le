@@ -1,0 +1,7 @@
+.box {
+    width: 1920px;
+    height: 1080px;
+    /* background-color: red; */
+    background-image: url("img/bg.jpg");
+    background-repeat: no-repeat;
+}
