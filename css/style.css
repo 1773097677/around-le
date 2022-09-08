@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+/* 整体背景 */
 .box {
     width: 100%;
     height: 1080px;
@@ -12,47 +13,141 @@
     background-size: cover;
     background-attachment: fixed;
 }
+
+/* 圆盘身体 */
 .around {
+    border-radius: 50%;
     position: relative;
     margin: 50px auto;
     width: 450px;
     height: 450px;
-    background-color: red;
-    /* background-attachment: fixed; */
-    border-radius: 225px;
-    transition: all 2s;
+    background-color: skyblue;
+    border: 30px solid red;
+    box-sizing: border-box;
+    /* background-image: url(../img/圆形.jpg);
+    background-size: cover; */
 }
-img {
-    width: 100%;
-    height: 100%;
-}
-.around:hover {
-    transform: rotate(360deg);
-}
+
+/* 指针部分 */
 .node {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin: 100px auto;
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
     position: absolute;
-    top:50%;
-    left:50%;
-    margin-left: -50px;
-    margin-top: -50px;
-    width: 100px;
-    height: 100px;
-    background-color: #ffff;
-    border-radius: 50px;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+.node:active {
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(3600deg);
+    }
+}
+
+/* 指针三角部分 */
+.san {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -16px;
+    margin-top: -40px;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent blue transparent;
+    border-style: solid;
+    border-width: 0 16px 25px 16px;
 
 }
-p {
-    margin-top: 41px;
-    margin-left: 11px;
-}
-.jt {
-    height: 200px;
-    width: 26px;
-    background-color: #ffff;
-    position: absolute;
-    top:50%;
-    left:50%;
-    margin-left: -13px;
-    margin-top: 20px;
 
+/* 分割线 */
+.a,
+.b,
+.c,
+.d,
+.e,
+.f {
+    position: absolute;
+    border: 1px solid red;
+    width: 223px;
+    left: 50%;
+    top: 50%;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+
+.b {
+    transform: rotate(60deg);
+    transform-origin: left bottom;
+}
+
+.c {
+    transform: rotate(120deg);
+    transform-origin: left bottom;
+}
+
+.d {
+    transform: rotate(180deg);
+    transform-origin: left bottom;
+}
+
+.e {
+    transform: rotate(240deg);
+    transform-origin: left bottom;
+}
+
+.f {
+    transform: rotate(300deg);
+    transform-origin: left bottom;
+}
+
+/* 轮盘内容 */
+.x,
+.y,
+.m,
+.n,
+.k,
+.l {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: -10px;
+    width: 20px;
+    height: 175px;
+    /* background-color: yellow; */
+    transform-origin: 50% -50px;
+}
+
+.y {
+    transform: rotate(60deg);
+}
+
+.m {
+    transform: rotate(120deg);
+}
+
+.n {
+    transform: rotate(180deg);
+}
+
+.k {
+    transform: rotate(240deg);
+}
+
+.l {
+    transform: rotate(300deg);
 }
